@@ -1,0 +1,6 @@
+--title 'IS::Range'
+--readme README.md
+--asset coverage-badge.svg
+--protected
+--no-private
+lib/**/*.rb

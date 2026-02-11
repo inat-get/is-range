@@ -10,7 +10,7 @@ Gem::Specification::new do |spec|
   spec.authors  = [ IS::Range::Info::AUTHOR ]
   spec.homepage =   IS::Range::Info::HOMEPAGE
 
-  spec.files = Dir[ 'lib/**/*', 'README.md', 'LICENSE' ]
+  spec.files = Dir[ 'lib/**/*', 'README.md', 'LICENSE', 'coverage-badge.svg' ]
 
   spec.required_ruby_version = '>= 3.4'
 
