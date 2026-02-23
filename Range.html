@@ -158,6 +158,28 @@
 </li>
 
       
+        <li class="protected ">
+  <span class="summary_signature">
+    
+      <a href="#end_succ-instance_method" title="#end_succ (instance method)">#<strong>end_succ</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title protected">protected</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
         <li class="public ">
   <span class="summary_signature">
     
@@ -300,6 +322,38 @@
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="end_succ-instance_method">
+  
+    #<strong>end_succ</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(protected)</span>
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+46
+47
+48
+49</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/is-range.rb', line 46</span>
+
+<span class='id identifier rubyid_protected'>protected</span> <span class='kw'>def</span> <span class='id identifier rubyid_end_succ'>end_succ</span>
+  <span class='kw'>return</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_end'>end</span> <span class='kw'>if</span> <span class='id identifier rubyid_exclude_end?'>exclude_end?</span> <span class='op'>||</span> <span class='op'>!</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_end'>end</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:succ</span><span class='rparen'>)</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_end'>end</span><span class='period'>.</span><span class='id identifier rubyid_succ'>succ</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="|-instance_method">
   
     #<strong>|</strong>(other)  &#x21d2; <tt>Object</tt> 
@@ -337,7 +391,7 @@
       <pre class="code"><span class="info file"># File 'lib/is-range.rb', line 22</span>
 
 <span class='kw'>def</span> <span class='op'>|</span> <span class='id identifier rubyid_other'>other</span>
-  <span class='kw'>return</span> <span class='kw'>nil</span> <span class='kw'>unless</span> <span class='id identifier rubyid_overlap?'>overlap?</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_end'>end</span> <span class='op'>==</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_begin'>begin</span> <span class='op'>||</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_begin'>begin</span> <span class='op'>==</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_end'>end</span>
+  <span class='kw'>return</span> <span class='kw'>nil</span> <span class='kw'>unless</span> <span class='id identifier rubyid_overlap?'>overlap?</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_end_succ'>end_succ</span> <span class='op'>==</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_begin'>begin</span> <span class='op'>||</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_begin'>begin</span> <span class='op'>==</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_end_succ'>end_succ</span>
   <span class='id identifier rubyid_b'>b</span><span class='comma'>,</span> <span class='id identifier rubyid_e'>e</span><span class='comma'>,</span> <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_begin'>begin</span><span class='comma'>,</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_end'>end</span><span class='comma'>,</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_exclude_end?'>exclude_end?</span>
   <span class='id identifier rubyid_bb'>bb</span><span class='comma'>,</span> <span class='id identifier rubyid_ee'>ee</span><span class='comma'>,</span> <span class='id identifier rubyid_xx'>xx</span> <span class='op'>=</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_begin'>begin</span><span class='comma'>,</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_end'>end</span><span class='comma'>,</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_exclude_end?'>exclude_end?</span>
   <span class='id identifier rubyid_rb'>rb</span> <span class='op'>=</span> <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_b'>b</span> <span class='op'>||</span> <span class='lparen'>(</span><span class='id identifier rubyid_bb'>bb</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_b'>b</span> <span class='op'>&lt;</span> <span class='id identifier rubyid_bb'>bb</span><span class='rparen'>)</span>
@@ -364,7 +418,7 @@
 </div>
 
       <div id="footer">
-  Generated on Wed Feb 11 19:56:59 2026 by
+  Generated on Mon Feb 23 14:54:45 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.38 (ruby-3.4.8).
 </div>
