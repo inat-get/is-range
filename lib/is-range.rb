@@ -20,7 +20,7 @@ class Range
   end
 
   def | other
-    return nil unless overlap?(other) || self.end == other.begin || self.begin == other.end
+    return nil unless overlap?(other) || self.end_succ == other.begin || self.begin == other.end_succ
     b, e, x = self.begin, self.end, self.exclude_end?
     bb, ee, xx = other.begin, other.end, other.exclude_end?
     rb = if !b || (bb && b < bb)
@@ -41,6 +41,11 @@ class Range
   def empty?
     return false if self.begin.nil? || self.end.nil?
     self.begin > self.end || (self.exclude_end? && self.begin == self.end)
+  end
+
+  protected def end_succ
+    return self.end if exclude_end? || !self.end.respond_to?(:succ)
+    self.end.succ
   end
 
 end

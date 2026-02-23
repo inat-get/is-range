@@ -7,7 +7,7 @@ end
 
 module IS::Range::Info
   NAME = 'is-range'
-  VERSION = '0.8.0'
+  VERSION = '0.8.2'
   SUMMARY = 'Minor monkey-patching for standard Range class'
   LICENSE = 'LGPL-3.0-only'
   AUTHOR = 'Ivan Shikhalev'

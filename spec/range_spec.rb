@@ -15,9 +15,11 @@ RSpec::describe Range do
     a = 1..3
     b = 3..5
     c = 1...3
+    d = 4..5
     expect(a | b).to eq(1..5)
     expect(a | c).to eq(1..3)
     expect(b | c).to eq(1..5)
+    expect(a | d).to eq(1..5)
   end
 
   it 'empty' do
